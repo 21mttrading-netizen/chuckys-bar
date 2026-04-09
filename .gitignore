@@ -1,0 +1,9 @@
+node_modules/
+temporary_screenshots/
+.DS_Store
+# Keep JPGs (used on site), ignore PNGs (originals/duplicates)
+brand_assets/*.png
+brand_assets/reference-*.png
+brand_assets/google-maps-*.png
+brand_assets/walkthrough-*.png
+brand_assets/gemini-*.png

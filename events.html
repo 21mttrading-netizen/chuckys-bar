@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's On | Chucky's Bar Randburg</title>
+    <meta name="description" content="Live DJs, music, comedy nights & more at Chucky's Bar, Randburg.">
+    <meta property="og:title" content="What's On | Chucky's Bar Randburg">
+    <meta property="og:description" content="DJs Friday & Saturday. Live music Sunday. Comedy nights. Magic shows. You're not going home early.">
+    <meta property="og:image" content="brand_assets/dj-stage-hq.jpg">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <style>
+        .pg-hero { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; overflow: hidden; text-align: center; }
+        .pg-hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: blur(2px) brightness(0.5); }
+        .pg-hero__overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.45) 40%, rgba(10,10,10,0.7) 80%, var(--dark) 100%); }
+        .pg-hero__content { position: relative; z-index: 2; padding: 120px 40px 60px; }
+        .sched { max-width: 900px; margin: 0 auto; }
+        .sched-row { display: grid; grid-template-columns: 80px 1fr auto; gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s; }
+        .sched-row:hover { background: rgba(255,255,255,0.02); padding-left: 8px; }
+        .sched-day { font-family: var(--font-display); font-size: 1.5rem; color: var(--neon-blue); text-shadow: 0 0 8px rgba(0,170,255,0.25); }
+        .sched-day--party { color: var(--red); text-shadow: 0 0 8px rgba(227,30,36,0.3); }
+        .sched-name { font-weight: 600; font-size: 1.05rem; margin-bottom: 2px; }
+        .sched-desc { font-size: 0.95rem; font-weight: 500; letter-spacing: 0.015em; color: var(--off-white); line-height: 1.6; }
+        .sched-time { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neon-blue); text-shadow: 0 0 6px rgba(0,170,255,0.2); white-space: nowrap; }
+        .sched-divider { padding: 28px 0 32px; text-align: center; }
+        .sched-break {
+            font-family: 'Permanent Marker', cursive !important;
+            font-size: clamp(1.4rem, 3vw, 2rem) !important;
+            animation: drunkSway 3s ease-in-out infinite;
+            margin-top: 0;
+        }
+        @keyframes drunkSway {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        .specials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 40px auto 0; }
+        .special-card { padding: 28px; background: var(--dark-mid); border: 1px solid rgba(227,30,36,0.15); border-radius: 8px; transition: all 0.3s; }
+        .special-card:hover { border-color: rgba(227,30,36,0.4); transform: translateY(-3px); box-shadow: 0 0 20px rgba(227,30,36,0.06); }
+        .special-card h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 8px; }
+        .special-card p { font-size: 0.9rem; color: var(--off-white); line-height: 1.6; }
+        .special-card .sched-time { margin-top: 12px; color: var(--red); }
+        .img-strip { width: 100%; height: 350px; overflow: hidden; }
+        .img-strip img { width: 100%; height: 130%; object-fit: cover; object-position: center top; display: block; will-change: transform; }
+        @media (max-width: 900px) {
+            .sched-row { grid-template-columns: 60px 1fr; gap: 12px; }
+            .sched-time { grid-column: 2; margin-top: -4px; }
+            .specials-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">CHUCKY'S <span>BAR</span></a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="events.html">Events</a>
+                <a href="menu.html">Menu</a>
+                <a href="index.html#gallery">Gallery</a>
+                <a href="index.html#contact">Find Us</a>
+            </div>
+            <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#about" class="mobile-link">About</a>
+        <a href="events.html" class="mobile-link">Events</a>
+        <a href="menu.html" class="mobile-link">Menu</a>
+        <a href="index.html#gallery" class="mobile-link">Gallery</a>
+        <a href="index.html#contact" class="mobile-link">Find Us</a>
+    </div>
+
+    <header class="pg-hero">
+        <video class="pg-hero__video" autoplay muted loop playsinline>
+            <source src="brand_assets/events-hero-loop.mp4" type="video/mp4">
+        </video>
+        <div class="pg-hero__overlay"></div>
+        <div class="pg-hero__content">
+            <span class="tag">What's On</span>
+            <h1 class="heading-xl">Events &<br>Line-Up.</h1>
+            <p class="drunk-quip" style="font-family: 'Permanent Marker', cursive; font-size: 2rem;">Every night has a story.</p>
+        </div>
+    </header>
+
+    <section style="padding: 60px 40px;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <span class="tag anim-slide" data-delay="0">Weekly</span>
+            <h2 class="heading-sub anim-slide" data-delay="100">The schedule.</h2>
+        </div>
+        <div class="sched">
+            <div class="sched-row anim-slide" data-delay="150">
+                <span class="sched-day">MON</span>
+                <div><div class="sched-name">Monday Chill</div><div class="sched-desc">Drink specials, pool tables, big screens showing all the sport.</div></div>
+                <span class="sched-time">11AM — 11PM</span>
+            </div>
+            <div class="sched-row anim-slide" data-delay="180">
+                <span class="sched-day">TUE</span>
+                <div><div class="sched-name">Taco Tuesday</div><div class="sched-desc">Taco specials and 2-for-1 beers. The midweek pick-me-up.</div></div>
+                <span class="sched-time">11AM — 11PM</span>
+            </div>
+            <div class="sched-row anim-slide" data-delay="210">
+                <span class="sched-day">WED</span>
+                <div><div class="sched-name">Wings Wednesday</div><div class="sched-desc">Half-price wings all day. Pair with an ice-cold draught.</div></div>
+                <span class="sched-time">11AM — 11PM</span>
+            </div>
+            <div class="sched-row anim-slide" data-delay="240">
+                <span class="sched-day">THU</span>
+                <div><div class="sched-name">Throwback Thursday</div><div class="sched-desc">Old school tunes, cocktail specials, the weekend starts building.</div></div>
+                <span class="sched-time">11AM — 12AM</span>
+            </div>
+            <div class="sched-divider">
+                <p class="drunk-quip sched-break">Buckle up. Weekend mode.</p>
+            </div>
+            <div class="sched-row anim-slide" data-delay="270">
+                <span class="sched-day sched-day--party">FRI</span>
+                <div><div class="sched-name">DJ Night</div><div class="sched-desc">Top DJs spinning the best beats. Dance floor opens at 8pm. Cocktail specials all night.</div></div>
+                <span class="sched-time">8PM — LATE</span>
+            </div>
+            <div class="sched-row anim-slide" data-delay="300">
+                <span class="sched-day sched-day--party">SAT</span>
+                <div><div class="sched-name">Weekend Vibes</div><div class="sched-desc">DJs, drink specials, and the best Saturday night energy in Randburg.</div></div>
+                <span class="sched-time">8PM — LATE</span>
+            </div>
+            <div class="sched-row anim-slide" data-delay="330">
+                <span class="sched-day sched-day--party">SUN</span>
+                <div><div class="sched-name">Live Music & Cocktails</div><div class="sched-desc">Chill vibes, live performers, handcrafted cocktails. The perfect way to end your weekend.</div></div>
+                <span class="sched-time">2PM — 10PM</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="img-strip">
+        <img src="brand_assets/dj-stage-hq.jpg" alt="DJ stage at Chucky's Bar" loading="lazy">
+    </div>
+
+    <section style="padding: 60px 40px;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <span class="tag anim-slide" data-delay="0">Upcoming</span>
+            <h2 class="heading-sub anim-slide" data-delay="100">Special events.</h2>
+            <p class="drunk-quip anim-slide" data-delay="150">Expect the unexpected.</p>
+        </div>
+        <div class="specials-grid">
+            <div class="special-card anim-slide" data-delay="200">
+                <h3>Comedy Night</h3>
+                <p>SA's best up-and-coming comedians. Laughs guaranteed. R50 entrance, doors at 6:30pm.</p>
+                <span class="sched-time">7PM START</span>
+            </div>
+            <div class="special-card anim-slide" data-delay="250">
+                <h3>Magic Show</h3>
+                <p>Jaw-dropping illusions and side-splitting comedy. A night of impossible magic.</p>
+                <span class="sched-time">DATES TBA</span>
+            </div>
+            <div class="special-card anim-slide" data-delay="300">
+                <h3>Groove Party</h3>
+                <p>Guest DJs, cocktail specials, all-day party. R50 entrance from midday.</p>
+                <span class="sched-time">12PM — LATE</span>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: var(--gray);">Follow us on <a href="https://www.facebook.com/chuckysbar" target="_blank" rel="noopener" style="color: var(--neon-blue); text-decoration: underline;">Facebook</a> for dates.</p>
+    </section>
+
+    <section style="padding: 24px 40px 48px; text-align: center;">
+        <h2 class="heading-sub">Ready to party?</h2>
+        <p class="drunk-quip">Grab your crew.</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+            <a href="tel:0826660319" class="btn btn--primary">Call Us</a>
+            <a href="menu.html" class="btn btn--ghost">See the Menu &rarr;</a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+    <footer class="s-footer">
+        <div class="s-footer__inner">
+            <a href="index.html" class="nav-logo">CHUCKY'S <span>BAR</span></a>
+            <p class="drunk-quip" style="margin-top: 0; transform: rotate(-1deg);">See you Friday.</p>
+            <p class="s-footer__address">Unit 3 & 4, Phoenix Center, Malibongwe Dr, Randburg 2194</p>
+            <div class="s-footer__socials">
+                <a href="https://www.facebook.com/chuckysbar" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.instagram.com/chuckysbar" target="_blank" rel="noopener">Instagram</a>
+            </div>
+            <p class="s-footer__copy">&copy; 2026 Chucky's Bar. Randburg.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const stripImg = document.querySelector('.img-strip img');
+        if (stripImg) {
+            window.addEventListener('scroll', () => {
+                const rect = stripImg.parentElement.getBoundingClientRect();
+                const yPos = rect.top * 0.3;
+                stripImg.style.transform = 'translateY(' + yPos + 'px)';
+            });
+        }
+    </script>
+</body>
+</html>

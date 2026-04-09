@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chuckysbar.co.za/sitemap.xml

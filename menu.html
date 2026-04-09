@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Chucky's Bar Randburg</title>
+    <meta name="description" content="Doubles specials, cocktails, and bar food at Chucky's Bar Randburg.">
+    <meta property="og:title" content="Menu | Chucky's Bar Randburg">
+    <meta property="og:description" content="Doubles specials from R70. Signature cocktails. Bar food that hits different. One more round — everyone, every night.">
+    <meta property="og:image" content="brand_assets/venue-bar-hq.jpg">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <style>
+        .pg-hero { position: relative; min-height: 50vh; padding: 160px 40px 80px; text-align: center; overflow: hidden; }
+        .pg-hero__bg { position: absolute; inset: 0; z-index: 0; }
+        .pg-hero__bg img { width: 100%; height: 100%; object-fit: cover; }
+        .pg-hero__bg::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.3) 40%, rgba(10,10,10,0.7) 80%, var(--dark) 100%); }
+        .pg-hero__content { position: relative; z-index: 2; }
+        .menu-list { max-width: 700px; display: flex; flex-direction: column; gap: 14px; }
+        .menu-row { display: flex; align-items: baseline; gap: 12px; }
+        .menu-row__name { font-size: 1.05rem; font-weight: 500; white-space: nowrap; }
+        .menu-row__line { flex: 1; height: 1px; background: rgba(255,255,255,0.08); min-width: 20px; }
+        .menu-row__price { font-family: var(--font-display); font-size: 1.4rem; color: var(--red); text-shadow: 0 0 6px rgba(227,30,36,0.2); white-space: nowrap; }
+        .food-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; }
+        .food-card { padding: 24px; background: var(--dark-mid); border: 1px solid rgba(255,255,255,0.04); border-radius: 8px; transition: all 0.3s; }
+        .food-card:hover { border-color: rgba(0,170,255,0.15); transform: translateY(-3px); }
+        .food-card__top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+        .food-card__name { font-weight: 600; font-size: 1.05rem; }
+        .food-card__price { font-family: var(--font-display); font-size: 1.4rem; color: var(--red); text-shadow: 0 0 6px rgba(227,30,36,0.2); }
+        .food-card__desc { font-size: 0.9rem; color: var(--off-white); line-height: 1.6; }
+        .food-card--flip { perspective: 800px; padding: 0; background: none; border: none; }
+        .food-card--flip:hover { transform: none; border-color: transparent; }
+        .food-card--flip__inner { position: relative; width: 100%; height: 100%; min-height: 220px; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); transform-style: preserve-3d; }
+        .food-card--flip:hover .food-card--flip__inner { transform: rotateY(180deg); }
+        .food-card--flip__front, .food-card--flip__back { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 8px; overflow: hidden; }
+        .food-card--flip__front { padding: 24px; background: var(--dark-mid); border: 1px solid rgba(255,255,255,0.04); display: flex; flex-direction: column; justify-content: center; }
+        .food-card--flip__back { transform: rotateY(180deg); background: var(--dark-mid); }
+        .food-card--flip__back img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        @media (max-width: 900px) { .food-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">CHUCKY'S <span>BAR</span></a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="events.html">Events</a>
+                <a href="menu.html">Menu</a>
+                <a href="index.html#gallery">Gallery</a>
+                <a href="index.html#contact">Find Us</a>
+            </div>
+            <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#about" class="mobile-link">About</a>
+        <a href="events.html" class="mobile-link">Events</a>
+        <a href="menu.html" class="mobile-link">Menu</a>
+        <a href="index.html#gallery" class="mobile-link">Gallery</a>
+        <a href="index.html#contact" class="mobile-link">Find Us</a>
+    </div>
+
+    <header class="pg-hero">
+        <div class="pg-hero__bg">
+            <img src="brand_assets/venue-bar-hq.jpg" alt="Chucky's Bar counter">
+        </div>
+        <div class="pg-hero__content">
+            <span class="tag">Menu</span>
+            <h1 class="heading-xl">Drinks &<br>eats.</h1>
+            <p class="drunk-quip hero-quip">"One more round" — Everyone.</p>
+        </div>
+    </header>
+
+    <section style="padding: 60px 40px;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <span class="tag anim-slide" data-delay="0">Drinks</span>
+            <h2 class="heading-sub anim-slide" data-delay="100">Doubles specials.</h2>
+            <p class="body-text anim-slide" data-delay="150">2x doubles & a mixer — our best value deals.</p>
+            <p class="drunk-quip anim-slide" data-delay="175" style="margin-bottom: 30px;">You won't find cheaper. Don't even try.</p>
+            <div class="menu-list">
+                <div class="menu-row anim-slide" data-delay="180"><span class="menu-row__name">Richelieu / Klipdrift / KWV 3yr Brandy + Coke</span><span class="menu-row__line"></span><span class="menu-row__price">R70</span></div>
+                <div class="menu-row anim-slide" data-delay="190"><span class="menu-row__name">Klipdrift Premium Brandy + Coke</span><span class="menu-row__line"></span><span class="menu-row__price">R120</span></div>
+                <div class="menu-row anim-slide" data-delay="200"><span class="menu-row__name">Captain Morgan / Spiced Gold Rum + Coke</span><span class="menu-row__line"></span><span class="menu-row__price">R75</span></div>
+                <div class="menu-row anim-slide" data-delay="210"><span class="menu-row__name">Three Ships 5yr Whiskey + Still/Sparkling</span><span class="menu-row__line"></span><span class="menu-row__price">R80</span></div>
+                <div class="menu-row anim-slide" data-delay="220"><span class="menu-row__name">Famous Grouse Whiskey + Still/Sparkling</span><span class="menu-row__line"></span><span class="menu-row__price">R80</span></div>
+                <div class="menu-row anim-slide" data-delay="230"><span class="menu-row__name">Jameson Whiskey + Still/Sparkling</span><span class="menu-row__line"></span><span class="menu-row__price">R120</span></div>
+                <div class="menu-row anim-slide" data-delay="240"><span class="menu-row__name">Vat 69 + Still/Sparkling</span><span class="menu-row__line"></span><span class="menu-row__price">R70</span></div>
+                <div class="menu-row anim-slide" data-delay="250"><span class="menu-row__name">Gordon's Gin + Tonic</span><span class="menu-row__line"></span><span class="menu-row__price">R80</span></div>
+                <div class="menu-row anim-slide" data-delay="260"><span class="menu-row__name">Tanqueray Gin + 2x Schweppes / Pink Tonic</span><span class="menu-row__line"></span><span class="menu-row__price">R140</span></div>
+                <div class="menu-row anim-slide" data-delay="270"><span class="menu-row__name">1818 Vodka + Coke</span><span class="menu-row__line"></span><span class="menu-row__price">R70</span></div>
+                <div class="menu-row anim-slide" data-delay="280"><span class="menu-row__name">Cape to Rio Cane + Coke</span><span class="menu-row__line"></span><span class="menu-row__price">R80</span></div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: var(--neon-blue); text-shadow: 0 0 8px rgba(0,170,255,0.2);">Energy Drinks</h3>
+            <div class="menu-list">
+                <div class="menu-row"><span class="menu-row__name">Redbull / Redbull Sugar Free (250ml)</span><span class="menu-row__line"></span><span class="menu-row__price">R35</span></div>
+                <div class="menu-row"><span class="menu-row__name">Monster Original (500ml)</span><span class="menu-row__line"></span><span class="menu-row__price">R35</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 60px 40px;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <span class="tag anim-slide" data-delay="0">Food</span>
+            <h2 class="heading-sub anim-slide" data-delay="100">Kitchen favourites.</h2>
+            <p class="drunk-quip anim-slide" data-delay="150">You're gonna need something to soak it up.</p>
+        </div>
+        <div class="food-grid" style="max-width: 900px; margin: 40px auto 0;">
+            <div class="food-card food-card--flip anim-slide" data-delay="200">
+                <div class="food-card--flip__inner">
+                    <div class="food-card--flip__front">
+                        <div class="food-card__top"><span class="food-card__name">Mutton Bunny Chow</span><span class="food-card__price">R95</span></div>
+                        <p class="food-card__desc">Slow-cooked mutton curry in a hollowed-out loaf. The Durban classic.</p>
+                    </div>
+                    <div class="food-card--flip__back"><img src="brand_assets/food-bunny-chow.jpg" alt="Mutton Bunny Chow"></div>
+                </div>
+            </div>
+            <div class="food-card food-card--flip anim-slide" data-delay="230">
+                <div class="food-card--flip__inner">
+                    <div class="food-card--flip__front">
+                        <div class="food-card__top"><span class="food-card__name">Chicken Wings (12pc)</span><span class="food-card__price">R85</span></div>
+                        <p class="food-card__desc">BBQ, peri-peri, or plain. Served with ranch dip.</p>
+                    </div>
+                    <div class="food-card--flip__back"><img src="brand_assets/food-chicken-wings.jpg" alt="Chicken Wings"></div>
+                </div>
+            </div>
+            <div class="food-card food-card--flip anim-slide" data-delay="260">
+                <div class="food-card--flip__inner">
+                    <div class="food-card--flip__front">
+                        <div class="food-card__top"><span class="food-card__name">Bar Burger</span><span class="food-card__price">R90</span></div>
+                        <p class="food-card__desc">Beef patty, cheese, pickles, house sauce. Served with chips.</p>
+                    </div>
+                    <div class="food-card--flip__back"><img src="brand_assets/food-burger.jpg" alt="Bar Burger"></div>
+                </div>
+            </div>
+            <div class="food-card food-card--flip anim-slide" data-delay="290">
+                <div class="food-card--flip__inner">
+                    <div class="food-card--flip__front">
+                        <div class="food-card__top"><span class="food-card__name">Loaded Fries</span><span class="food-card__price">R65</span></div>
+                        <p class="food-card__desc">Cheese sauce, bacon bits, jalape&ntilde;os, spring onion.</p>
+                    </div>
+                    <div class="food-card--flip__back"><img src="brand_assets/food-loaded-fries.jpg" alt="Loaded Fries"></div>
+                </div>
+            </div>
+            <div class="food-card food-card--flip anim-slide" data-delay="320">
+                <div class="food-card--flip__inner">
+                    <div class="food-card--flip__front">
+                        <div class="food-card__top"><span class="food-card__name">Calamari &amp; Chips</span><span class="food-card__price">R85</span></div>
+                        <p class="food-card__desc">Golden fried calamari strips with chips and dipping sauce.</p>
+                    </div>
+                    <div class="food-card--flip__back"><img src="brand_assets/food-calamari-hero.jpg" alt="Calamari and chips"></div>
+                </div>
+            </div>
+            <div class="food-card food-card--flip anim-slide" data-delay="350">
+                <div class="food-card--flip__inner">
+                    <div class="food-card--flip__front">
+                        <div class="food-card__top"><span class="food-card__name">Nachos Supreme</span><span class="food-card__price">R75</span></div>
+                        <p class="food-card__desc">Mince, cheese, sour cream, guac, salsa. Great for sharing.</p>
+                    </div>
+                    <div class="food-card--flip__back"><img src="brand_assets/food-nachos.jpg" alt="Nachos Supreme"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 24px 40px 48px; text-align: center;">
+        <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 20px;">Prices may vary. Ask your server for today's specials. Also on <strong style="color: var(--white);">Uber Eats</strong>.</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="tel:0826660319" class="btn btn--primary">Call Us</a>
+            <a href="events.html" class="btn btn--ghost">See Events &rarr;</a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+    <footer class="s-footer">
+        <div class="s-footer__inner">
+            <a href="index.html" class="nav-logo">CHUCKY'S <span>BAR</span></a>
+            <p class="drunk-quip" style="margin-top: 0; transform: rotate(-1deg);">See you Friday.</p>
+            <p class="s-footer__address">Unit 3 & 4, Phoenix Center, Malibongwe Dr, Randburg 2194</p>
+            <div class="s-footer__socials">
+                <a href="https://www.facebook.com/chuckysbar" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.instagram.com/chuckysbar" target="_blank" rel="noopener">Instagram</a>
+            </div>
+            <p class="s-footer__copy">&copy; 2026 Chucky's Bar. Randburg.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
