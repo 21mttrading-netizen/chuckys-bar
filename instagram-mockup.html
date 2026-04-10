@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chucky's Bar — Instagram Mockup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #000; color: #fff; min-height: 100vh; display: flex; justify-content: center; padding: 20px; }
+
+        .ig { max-width: 420px; width: 100%; }
+
+        /* Header */
+        .ig-header { padding: 16px 0; border-bottom: 1px solid #262626; margin-bottom: 16px; }
+        .ig-handle { font-size: 1.1rem; font-weight: 700; }
+
+        /* Profile */
+        .ig-profile { display: flex; gap: 24px; align-items: center; padding: 16px 0; }
+        .ig-avatar { width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid #E31E24; flex-shrink: 0; }
+        .ig-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .ig-stats { display: flex; gap: 20px; }
+        .ig-stat { text-align: center; }
+        .ig-stat__num { font-size: 1rem; font-weight: 700; display: block; }
+        .ig-stat__label { font-size: 0.7rem; color: #999; }
+
+        /* Bio */
+        .ig-bio { padding: 8px 0 16px; }
+        .ig-bio__name { font-weight: 700; font-size: 0.85rem; }
+        .ig-bio__text { font-size: 0.85rem; color: #ccc; line-height: 1.5; margin-top: 4px; }
+        .ig-bio__link { color: #00AAFF; font-size: 0.85rem; font-weight: 600; }
+        .ig-bio__cat { font-size: 0.75rem; color: #666; margin-top: 2px; }
+
+        /* Action buttons */
+        .ig-actions { display: flex; gap: 6px; padding-bottom: 16px; }
+        .ig-btn { flex: 1; padding: 8px; text-align: center; font-size: 0.8rem; font-weight: 600; border-radius: 8px; background: #262626; cursor: pointer; }
+        .ig-btn--primary { background: #0095f6; color: #fff; }
+
+        /* Highlights */
+        .ig-highlights { display: flex; gap: 16px; padding: 12px 0; overflow-x: auto; border-bottom: 1px solid #262626; }
+        .ig-highlight { text-align: center; flex-shrink: 0; }
+        .ig-highlight__circle { width: 58px; height: 58px; border-radius: 50%; overflow: hidden; border: 2px solid #333; margin-bottom: 4px; }
+        .ig-highlight__circle img { width: 100%; height: 100%; object-fit: cover; }
+        .ig-highlight__label { font-size: 0.65rem; color: #999; }
+
+        /* Tabs */
+        .ig-tabs { display: flex; border-bottom: 1px solid #262626; }
+        .ig-tab { flex: 1; text-align: center; padding: 12px 0; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; border-bottom: 1px solid #fff; }
+
+        /* Grid */
+        .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; padding-top: 2px; }
+        .ig-post { aspect-ratio: 1; overflow: hidden; cursor: pointer; position: relative; }
+        .ig-post img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s; }
+        .ig-post:hover img { opacity: 0.7; }
+
+        /* Presentation wrapper */
+        .presentation { max-width: 900px; width: 100%; }
+        .pres-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 8px; color: #fff; }
+        .pres-sub { font-size: 0.9rem; text-align: center; color: #666; margin-bottom: 40px; }
+        .pres-note { font-size: 0.8rem; color: #444; text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #1a1a1a; }
+
+        .phone-frame {
+            max-width: 420px;
+            margin: 0 auto;
+            border: 3px solid #333;
+            border-radius: 32px;
+            padding: 12px 16px 20px;
+            background: #000;
+        }
+
+        .phone-notch {
+            width: 120px; height: 24px; background: #1a1a1a; border-radius: 12px; margin: 0 auto 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <p class="pres-title">Chucky's Bar — Instagram Proposal</p>
+        <p class="pres-sub">What your Instagram presence could look like</p>
+
+        <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="ig">
+                <div class="ig-header">
+                    <span class="ig-handle">chuckysbar_randburg</span>
+                </div>
+
+                <div class="ig-profile">
+                    <div class="ig-avatar">
+                        <img src="brand_assets/venue-entrance-hq.jpg" alt="Avatar">
+                    </div>
+                    <div class="ig-stats">
+                        <div class="ig-stat"><span class="ig-stat__num">9</span><span class="ig-stat__label">Posts</span></div>
+                        <div class="ig-stat"><span class="ig-stat__num">1.1K</span><span class="ig-stat__label">Followers</span></div>
+                        <div class="ig-stat"><span class="ig-stat__num">342</span><span class="ig-stat__label">Following</span></div>
+                    </div>
+                </div>
+
+                <div class="ig-bio">
+                    <div class="ig-bio__name">Chucky's Bar</div>
+                    <div class="ig-bio__cat">Sports Bar · Nightlife · Live Music</div>
+                    <div class="ig-bio__text">Randburg's #1 Sports Bar & Nightlife Spot<br>DJs Fri & Sat · Live Music Sun · Cocktails · Big Screens<br>Unit 3&4, Phoenix Center, Malibongwe Dr</div>
+                    <a class="ig-bio__link" href="#">chuckysbar.co.za</a>
+                </div>
+
+                <div class="ig-actions">
+                    <div class="ig-btn ig-btn--primary">Follow</div>
+                    <div class="ig-btn">Message</div>
+                    <div class="ig-btn">Contact</div>
+                </div>
+
+                <div class="ig-highlights">
+                    <div class="ig-highlight">
+                        <div class="ig-highlight__circle"><img src="brand_assets/crowd-dancefloor-enhanced.jpg" alt="Vibes"></div>
+                        <span class="ig-highlight__label">Vibes</span>
+                    </div>
+                    <div class="ig-highlight">
+                        <div class="ig-highlight__circle"><img src="brand_assets/food-bunny-chow.jpg" alt="Menu"></div>
+                        <span class="ig-highlight__label">Menu</span>
+                    </div>
+                    <div class="ig-highlight">
+                        <div class="ig-highlight__circle"><img src="brand_assets/dj-stage-hq.jpg" alt="Events"></div>
+                        <span class="ig-highlight__label">Events</span>
+                    </div>
+                    <div class="ig-highlight">
+                        <div class="ig-highlight__circle"><img src="brand_assets/patio-golden-hour.jpg" alt="Patio"></div>
+                        <span class="ig-highlight__label">Patio</span>
+                    </div>
+                    <div class="ig-highlight">
+                        <div class="ig-highlight__circle"><img src="brand_assets/venue-bar-hq.jpg" alt="Bar"></div>
+                        <span class="ig-highlight__label">The Bar</span>
+                    </div>
+                </div>
+
+                <div class="ig-tabs">
+                    <div class="ig-tab">Posts</div>
+                </div>
+
+                <div class="ig-grid">
+                    <div class="ig-post"><img src="brand_assets/patio-golden-hour.jpg" alt="Post 1"></div>
+                    <div class="ig-post"><img src="brand_assets/venue-entrance-hq.jpg" alt="Post 2"></div>
+                    <div class="ig-post"><img src="brand_assets/crowd-dancefloor-enhanced.jpg" alt="Post 3"></div>
+                    <div class="ig-post"><img src="brand_assets/food-bunny-chow.jpg" alt="Post 4"></div>
+                    <div class="ig-post"><img src="brand_assets/dj-stage-hq.jpg" alt="Post 5"></div>
+                    <div class="ig-post"><img src="brand_assets/food-chicken-wings.jpg" alt="Post 6"></div>
+                    <div class="ig-post"><img src="brand_assets/venue-bar-hq.jpg" alt="Post 7"></div>
+                    <div class="ig-post"><img src="brand_assets/group-party-sign.jpg" alt="Post 8"></div>
+                    <div class="ig-post"><img src="brand_assets/ladies-night-enhanced.jpg" alt="Post 9"></div>
+                </div>
+            </div>
+        </div>
+
+        <p class="pres-note">Mockup prepared by your web team. Images used are from the website build. Real Instagram account setup, content calendar, and ongoing management available as an add-on service.</p>
+    </div>
+</body>
+</html>
