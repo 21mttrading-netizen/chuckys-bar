@@ -115,9 +115,9 @@ img { display: block; max-width: 100%; height: auto; }
 /* TYPOGRAPHY */
 .tag {
     display: block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.25em;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--neon-blue);
     text-shadow: 0 0 10px rgba(0, 170, 255, 0.25);
@@ -172,6 +172,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .drunk-quip {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     color: var(--red);
     text-shadow: 0 0 12px rgba(227,30,36,0.2);
     transform: rotate(-2deg);
@@ -185,9 +187,9 @@ img { display: block; max-width: 100%; height: auto; }
     display: inline-flex;
     align-items: center;
     padding: 14px 32px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     border-radius: 4px;
     transition: all 0.3s var(--ease);
@@ -216,36 +218,22 @@ img { display: block; max-width: 100%; height: auto; }
     transform: translateY(-1px);
 }
 
-.btn--sm { padding: 8px 18px; font-size: 0.7rem; }
+.btn--sm { padding: 8px 18px; font-size: 0.85rem; }
 
-/* Book a Table — card flip */
+/* Book a Table — text swap on hover */
 .btn--flip {
     position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s var(--ease-out);
-}
-
-.btn--flip::after {
-    content: attr(data-hover);
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 0.85rem;
-    letter-spacing: 0.02em;
-    text-transform: none;
-    background: var(--neon-blue);
-    color: var(--dark);
-    border-radius: 4px;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
+    overflow: hidden;
 }
 
 .btn--flip:hover {
-    transform: rotateY(180deg);
-    box-shadow: 0 0 25px rgba(0,170,255,0.35);
+    background: var(--neon-blue);
+    color: var(--dark);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    box-shadow: 0 0 25px rgba(0,170,255,0.3);
 }
 
 /* ============================================
@@ -274,13 +262,14 @@ img { display: block; max-width: 100%; height: auto; }
 .nav-logo span { color: var(--red); text-shadow: 0 0 8px rgba(227,30,36,0.4); margin-left: 4px; }
 .nav-links { display: flex; gap: 36px; }
 .nav-links a {
-    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em;
+    font-family: var(--font-display);
+    font-size: 1.05rem; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--white); transition: color 0.3s;
     text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 .nav-links a:hover { color: var(--neon-blue); }
 .nav-cta {
-    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    font-family: var(--font-display); font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase;
     padding: 10px 24px; border: 1px solid rgba(227,30,36,0.4); color: var(--red);
     border-radius: 4px; transition: all 0.3s;
 }
@@ -502,7 +491,7 @@ img { display: block; max-width: 100%; height: auto; }
     text-shadow: 0 0 10px rgba(0,170,255,0.25);
     line-height: 1;
 }
-.s-stat__label { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
+.s-stat__label { font-family: var(--font-display); font-size: 0.85rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.12em; }
 
 /* ============================================
    S6: VENUE — collage
@@ -847,7 +836,7 @@ img { display: block; max-width: 100%; height: auto; }
     font-family: var(--font-display); font-size: 1.2rem;
     color: var(--neon-blue); text-shadow: 0 0 8px rgba(0,170,255,0.3);
 }
-.pill__name { font-size: 0.85rem; color: var(--off-white); }
+.pill__name { font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.08em; color: var(--off-white); }
 
 /* ============================================
    S7: MENU
@@ -1092,8 +1081,9 @@ img { display: block; max-width: 100%; height: auto; }
 .s-footer__address { font-size: 0.85rem; color: var(--gray); letter-spacing: 0.02em; }
 .s-footer__socials { display: flex; gap: 20px; }
 .s-footer__socials a {
-    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--neon-blue); transition: color 0.3s;
+    font-family: var(--font-display);
+    font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--neon-blue);
 }
 .s-footer__socials a:hover { color: var(--white); text-shadow: 0 0 8px rgba(0,170,255,0.3); transform: translateY(-2px); }
 .s-footer__socials a { transition: all 0.3s var(--ease); display: inline-block; }
@@ -1243,11 +1233,11 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .s-review__author {
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
     color: var(--neon-blue);
     text-shadow: 0 0 6px rgba(0,170,255,0.2);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
